@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mycos: Connecting the Cannabis Community with AI</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<!-- Navigation bar -->
+	<nav class="navbar navbar-expand-sm bg-light navbar-light">
+		<a class="navbar-brand" href="#">Mycos</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">About Us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Contact Us</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Main content -->
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-md-6">
+				<h1>Find the Perfect Product for Your Needs</h1>
+				<p class="lead">With Mycos AI, you can get personalized recommendations based on your unique needs and preferences. Our algorithm analyzes lab tests, user reviews, genetics, and more to find the products that are right for you.</p>
+			</div>
+			
+	<div class="container mt-5">
+		<div class="row justify-content-center">
+			<div class="col-md-8 offset-md-2">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Ask Mycos Anything About Cannabis" id="ai-input">
+					<div class="input-group-append">
+						<button class="btn btn-warning" type="button" id="submit-btn" style="background-color: #aadbd2; border-color: #aadbd2;">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+   
+		<div class="row justify-content-center mt-5">
+			<div class="col-md-6">
+         <h5>Mycos' Response:</h5>
+				<div class="card">
+					<div class="card-body" id="ai-output">
+						<!-- Mycos AI's response will be displayed here -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#submit-btn').click(function(event) {
+				event.preventDefault();
+				// Send the user's input to the server to get Mycos AI's response
+				$.ajax({
+					url: '/api/ai',
+					method: 'POST',
+					data: {input: $('#ai-input').val()},
+					success: function(response) {
+						// Display Mycos AI's response in the output section
+						$('#ai-output').html(response);
+						// Clear the input field
+						$('#ai-input').val('');
+					}
+				});
+			});
+		});
+	</script>
+
+		</div>
+	</div>
+<div class ="container mt-5" >
+
+  <h3>Strains to Check Out</h3>
+  <p>
+    {% for strains in strains%}
+      {% include 'strains.html'%}
+    {% endfor %}
+  </p>
+
+  
+</div>
+	<!-- Features section -->
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-md-4">
+				<h3>Personalized Recommendations</h3>
+				<p>Our AI analyzes your preferences and tracks your progress over time to suggest products that are right for you.</p>
+			</div>
+			<div class="col-md-4">
+				<h3>Lab Test Data</h3>
+				<p>We use lab test data to provide accurate information on Terpenes, as well as other key compounds.</p>
+			</div>
+			<div class="col-md-4">
+				<h3>User Reviews</h3>
+				<p>Our community of enthusiasts provides valuable insights into the effects and quality of different products.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- CTA section -->
+	<div class="container mt-5 border-top">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>		Sign up for Mycos AI Today</h2>
+			<p>Join our community of consumers and start getting personalized product recommendations based on your needs and preferences.</p>
+		</div>
+		<div class="col-md-6">
+			<a href="#" class="btn btn-warning btn-lg btn-block">Join The Waitlist</a>
+		</div>
+	</div>
+</div>
+
+<!-- Footer section -->
+<footer class="bg-light text-center py-3">
+	<p>© 2023 Mycos. All rights reserved.</p>
+</footer>
+</body>
+</html>
+
