@@ -5,7 +5,7 @@ app = Flask (__name__)
 STRAINS = [
   {
     'id':1,
-    'title': 'white widow',
+    'title': 'White Widow',
     'type': 'Indica',
     'effects': 'sedative'
   },
