@@ -12,25 +12,7 @@
 <body>
 
 	<!-- Navigation bar -->
-	<nav class="navbar navbar-expand-sm bg-light navbar-light">
-		<a class="navbar-brand" href="#">Mycos</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">About Us</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Contact Us</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
+	{% include 'nav.html' %}
 
 	<!-- Main content -->
 	<div class="container mt-5">
@@ -126,19 +108,18 @@
 	<div class="container mt-5 border-top">
 		<div class="row">
 			<div class="col-md-6">
+      </br>
 				<h2>		Sign up for Mycos AI Today</h2>
 			<p>Join our community of consumers and start getting personalized product recommendations based on your needs and preferences.</p>
 		</div>
 		<div class="col-md-6">
-			<a href="#" class="btn btn-warning btn-lg btn-block">Join The Waitlist</a>
+			<a href="mailto:Justin@mycosnetwork.com?subject=Waitlist%20Sign%20Up&body=My%20Name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20Zipcode%3A%20%3Cyour%20zipcode%20here%3E%0D%0A%0D%0AYour%20favorite%20product%20type%3A%20%3Cyour%20favorite%20product%20type%20here%3E%0D%0A%0D%0A" class="btn btn-warning btn-lg btn-block">Join The Waitlist</a>
 		</div>
 	</div>
 </div>
 
 <!-- Footer section -->
-<footer class="bg-light text-center py-3">
-	<p>© 2023 Mycos. All rights reserved.</p>
-</footer>
+{% include 'footer.html' %}
 </body>
 </html>
 
